@@ -1,0 +1,7 @@
+gnuplot> set xlabel "x"
+gnuplot> set ylabel "y"
+gnuplot> set zlabel "z"
+gnuplot> set title "Surface Reproduced from Data File"
+gnuplot> set grid
+gnuplot> set view 60,35
+gnuplot> splot "surface_data.dat" using 1:2:3 with linespoints title "Surface"

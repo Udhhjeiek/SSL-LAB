@@ -1,0 +1,22 @@
+# MatrixSize PyTorchTime NaivePythonTime
+50 0.00006997 0.01577677
+100 0.00005157 0.06819950
+200 0.00015000 0.47886257
+
+
+Why is the performance difference so large?
+
+The naive Python implementation uses three nested loops to perform
+matrix multiplication. For an n x n matrix, this requires
+approximately n^3 operations.
+
+Each operation is executed by the Python interpreter, which introduces
+significant overhead. Therefore, as the matrix size increases, the
+execution time increases rapidly.
+
+PyTorch performs matrix multiplication using optimized compiled
+numerical operations. It uses efficient low-level implementations and
+can take advantage of hardware-level optimization and parallelism.
+
+Therefore, PyTorch is much faster than the naive Python
+implementation, especially as the matrix size increases.

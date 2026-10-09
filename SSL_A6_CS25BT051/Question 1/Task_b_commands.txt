@@ -1,0 +1,63 @@
+gnuplot> set xlabel "x"
+gnuplot> set ylabel "y"
+gnuplot> set zlabel "z"
+gnuplot> set xrange [-6:6]
+gnuplot> set yrange [-6:6]
+gnuplot> set samples 120
+gnuplot> set isosamples 120
+gnuplot> set grid
+gnuplot> z1(x,y) = sin(x)*cos(y)
+gnuplot> z2(x,y) = sin(x)*cos(y)*exp(-(x*x+y*y)/20.0)
+gnuplot> set output "z1_surface.pdf"
+gnuplot> set title "z1 = sin(x) cos(y)"
+gnuplot> splot z1(x,y) with pm3d
+Closing z1_surface.pdf
+gnuplot> set output "z2_surface.pdf"
+gnuplot> set title "z2 = sin(x) cos(y) exp(-(x^2+y^2)/20)"
+gnuplot> splot z2(x,y) with pm3d
+Closing z2_surface.png
+gnuplot> unset output
+
+QUESTION 1 — PART B
+
+(a) Why does the second surface become flatter away from the origin?
+
+The second surface is
+
+z = sin(x)cos(y)e^(-(x^2+y^2)/20).
+
+The factor e^(-(x^2+y^2)/20) decreases as x and y move farther
+from the origin.
+
+Therefore, it reduces the amplitude of sin(x)cos(y) away from
+the origin. As a result, the values of z become closer to zero
+and the surface becomes flatter.
+
+
+(b) Where do you observe the largest positive and negative values?
+
+The largest positive and negative values are observed near the
+origin.
+
+This is because the exponential factor has its maximum value of
+1 at the origin and decreases as the distance from the origin
+increases.
+
+The sine and cosine terms produce the positive and negative
+oscillations, while the exponential factor reduces their
+magnitude away from the origin.
+
+
+(c) How does changing the sampling resolution affect the plot?
+
+Increasing the sampling resolution means that more points are
+used to calculate and display the surface.
+
+A higher sampling resolution produces a smoother and more
+accurate surface and represents peaks and valleys better.
+
+A lower sampling resolution can make the surface look rough
+or less accurate and may miss some small features.
+
+However, increasing the sampling resolution also increases
+the time required to generate the plot.

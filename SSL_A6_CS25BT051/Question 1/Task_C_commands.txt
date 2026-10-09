@@ -1,0 +1,34 @@
+gnuplot> set xlabel "x"
+gnuplot> set ylabel "y"
+gnuplot> set zlabel "z"
+gnuplot> set xrange [-6:6]
+gnuplot> set yrange [-6:6]
+gnuplot> set samples 120
+gnuplot> set isosamples 120
+gnuplot> set grid
+gnuplot> f(x,y) = sin(x)*cos(y)*exp(-(x*x+y*y)/20.0)
+gnuplot> set output "surface_3d.png"
+gnuplot> set title "3D Surface"
+gnuplot> unset contour
+gnuplot> set hidden3d
+gnuplot> set view 60,35,1,1
+gnuplot> splot f(x,y) with pm3d
+gnuplot> unset output
+gnuplot> set output "contour_map.png"
+gnuplot> set title "Contour Map"
+gnuplot> set contour base
+gnuplot> set cntrparam levels 15
+gnuplot> unset hidden3d
+gnuplot> set view map
+gnuplot> unset surface
+gnuplot> splot f(x,y) with lines
+gnuplot> unset output
+gnuplot> set output "surface_contour.png"
+gnuplot> set title "Surface + Contours"
+gnuplot> set view 60,35,1,1
+gnuplot> set contour base
+gnuplot> set cntrparam levels 15
+gnuplot> set hidden3d
+gnuplot> set surface
+gnuplot> splot f(x,y) with pm3d
+gnuplot> unset output

@@ -1,0 +1,10 @@
+gnuplot> set xlabel "Matrix Size"
+gnuplot> set ylabel "Number of Repetitions"
+gnuplot> set zlabel "Execution Time (seconds)"
+gnuplot> set title "Matrix Size vs Repetitions vs Execution Time"
+gnuplot> set grid
+gnuplot> set pm3d
+gnuplot> set hidden3d
+gnuplot> set view 60,35
+gnuplot> splot "matrix_3d.dat" using 1:2:3 with pm3d title "Execution Time"
+gnuplot>

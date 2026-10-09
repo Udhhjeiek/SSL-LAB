@@ -1,0 +1,23 @@
+gnuplot> set xlabel "x"
+gnuplot> set ylabel "y"
+gnuplot> set zlabel "z"
+gnuplot> set xrange [-6:6]
+gnuplot> set yrange [-6:6]
+gnuplot> set samples 100
+gnuplot> set isosamples 100
+gnuplot> set grid
+gnuplot> set hidden3d
+gnuplot> f(x,y) = sin(x)*cos(y)*exp(-(x*x+y*y)/20.0)
+gnuplot> set output "view1.pdf"
+gnuplot> set title "View 1"
+gnuplot> set view 60,35,1,1
+gnuplot> splot f(x,y) with pm3d
+gnuplot> set output "view2.pdf"
+gnuplot> set title "View 2"
+gnuplot> set view 30,120,1,1
+gnuplot> splot f(x,y) with pm3d
+gnuplot> set output "view3.pdf"
+gnuplot> set title "View 3"
+gnuplot> set view 75,210,1,1
+gnuplot> splot f(x,y) with pm3d
+gnuplot> unset output

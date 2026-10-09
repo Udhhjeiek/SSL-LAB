@@ -1,0 +1,98 @@
+QUESTION 2 — PART E
+
+
+(a) Does execution time grow approximately as O(n^3)?
+
+Yes, the execution time generally grows approximately as O(n^3).
+Matrix multiplication of two n x n matrices requires approximately
+n^3 operations.
+
+However, the measured execution time may not follow a perfect
+cubic relationship because of hardware and system-level factors.
+
+
+(b) Why does the naive Python implementation perform poorly?
+
+The naive Python implementation uses three nested loops to perform
+matrix multiplication.
+
+These operations are executed by the Python interpreter, which
+introduces additional overhead.
+
+As the matrix size increases, the number of operations increases
+approximately as n^3, so the execution time increases rapidly.
+
+
+(c) Why does PyTorch perform better?
+
+PyTorch performs matrix multiplication using optimized numerical
+operations and compiled libraries.
+
+These operations can take advantage of efficient low-level
+implementations and hardware parallelism.
+
+Therefore, PyTorch performs much faster than the naive Python
+implementation.
+
+
+(d) Is the timing perfectly smooth as n increases?
+
+No, the timing is not perfectly smooth.
+
+Execution time can vary because of background processes, CPU
+scheduling, cache effects, memory operations and other system
+factors.
+
+Therefore, some fluctuations in the measured execution time are
+expected.
+
+
+(e) What factors other than algorithmic complexity influence the measurements?
+
+The measurements can be influenced by several factors, including:
+
+1. CPU or GPU performance
+2. Number of CPU cores
+3. CPU clock frequency
+4. Cache size
+5. Memory bandwidth
+6. Memory allocation
+7. Background processes
+8. Operating system scheduling
+9. Thermal conditions
+10. PyTorch implementation and numerical libraries
+11. Hardware parallelism
+
+
+(f) Why should several repetitions be used?
+
+Several repetitions are used to reduce the effect of random timing
+variations.
+
+The average execution time gives a more reliable measurement.
+
+The minimum execution time can also show the performance when there
+is relatively little interference from other processes.
+
+
+(g) Why should the first execution sometimes be treated differently?
+
+The first execution can include additional overhead such as
+initialization, memory allocation, cache effects and library setup.
+
+Therefore, an initial warm-up execution is performed before taking
+the actual timing measurements.
+
+
+(h) Does a 3D visualization provide more information than a 2D plot?
+
+A 3D visualization can show the relationship between matrix size,
+number of repetitions and execution time at the same time.
+
+Therefore, it provides an additional perspective on the experiment.
+
+However, a 2D plot is usually easier to read when comparing exact
+execution times and identifying trends.
+
+Therefore, a 3D visualization is useful as a complementary view,
+but it is not necessarily better than a 2D plot.

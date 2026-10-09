@@ -1,0 +1,24 @@
+gnuplot> set output "matrix_time.png"
+gnuplot> set title "Matrix Size vs Execution Time"
+gnuplot> set xlabel "Matrix Size (n)"
+gnuplot> set ylabel "Execution Time (seconds)"
+gnuplot> set grid
+gnuplot> plot "matrix_results.dat" using 1:2 with linespoints title "PyTorch"
+gnuplot> unset output
+gnuplot> set output "method_comparison.png"
+gnuplot> set title "PyTorch vs Naive Python"
+gnuplot> set xlabel "Matrix Size (n)"
+gnuplot> set ylabel "Execution Time (seconds)"
+gnuplot> set grid
+gnuplot> plot "method_comparison.dat" using 1:2 with linespoints title "PyTorch", \
+>     "method_comparison.dat" using 1:3 with linespoints title "Naive Python"
+gnuplot> unset output
+gnuplot> set output "matrix_loglog.png"
+gnuplot> set title "Log-Log Plot of Matrix Multiplication"
+gnuplot> set xlabel "Matrix Size (n)"
+gnuplot> set ylabel "Execution Time (seconds)"
+gnuplot> set logscale xy
+gnuplot> set grid
+gnuplot> plot "matrix_results.dat" using 1:2 with linespoints title "PyTorch"
+gnuplot> unset logscale xy
+gnuplot> unset output
